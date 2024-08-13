@@ -26,7 +26,7 @@ class PegawaiController extends Controller
         $request->validate([
             'nip' => 'required|unique:pegawai,nip|max:20',
             'nama' => 'required|max:50',
-            'jabatan_id' => 'nullable|exists:jabatan_id',
+            'jabatan_id' => 'nullable|exists:jabatan,id',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -54,7 +54,7 @@ class PegawaiController extends Controller
         $request->validate([
             'nip' => 'required|max:20|unique:pegawai,nip,' . $pegawai->id,
             'nama' => 'required|max:50',
-            'jabatan_id' => 'nullable|exists:jabatan_id',
+            'jabatan_id' => 'nullable|exists:jabatan,id',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

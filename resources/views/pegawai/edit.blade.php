@@ -19,11 +19,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="jabatan" class="form-label">Jabatan</label>
-            <select class="form-control" id="jabatan" name="jabatan">
+            <label for="jabatan_id" class="form-label">Jabatan</label>
+            <select class="form-control" id="jabatan_id" name="jabatan_id">
                 <option value="">Pilih Jabatan</option>
                 @foreach($jabatans as $jabatan)
-                <option value="{{ $jabatan->id }}" {{ $pegawai->jabatan == $jabatan->id ? 'selected' : '' }}>{{ $jabatan->nama_jabatan }}</option>
+                <option value="{{ $jabatan->id }}" {{ $jabatan->id == old('jabatan_id', $pegawai->jabatan_id) ? 'selected' : '' }}>
+                    {{ $jabatan->nama_jabatan }}
+                </option>
                 @endforeach
             </select>
         </div>
@@ -31,8 +33,11 @@
         <div class="mb-3">
             <label for="gambar" class="form-label">Gambar</label>
             <input type="file" class="form-control" id="gambar" name="gambar">
+        </div>
+
+        <div class="mb-3">
             @if($pegawai->gambar)
-            <img src="/{{ $pegawai->gambar }}" alt="Gambar Pegawai" class="img-fluid mt-2" width="150">
+            <img src="{{ asset($pegawai->gambar) }}" alt="Gambar Pegawai" class="img-fluid" width="100">
             @endif
         </div>
 

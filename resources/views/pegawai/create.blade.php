@@ -18,11 +18,11 @@
         </div>
 
         <div class="mb-3">
-            <label for="jabatan" class="form-label">Jabatan</label>
+            <label for="jabatan_id" class="form-label">Jabatan</label>
             <select class="form-control" id="jabatan_id" name="jabatan_id">
                 <option value="">Pilih Jabatan</option>
                 @foreach($jabatans as $jabatan)
-                <option value="{{ $jabatan->jabatan_id }}">{{ $jabatan->nama_jabatan }}</option>
+                <option value="{{ $jabatan->id }}">{{ $jabatan->nama_jabatan }}</option>
                 @endforeach
             </select>
         </div>

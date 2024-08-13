@@ -25,12 +25,10 @@
             <tr>
                 <td>{{ $pegawai->nip }}</td>
                 <td>{{ $pegawai->nama }}</td>
-                <td>{{ $pegawai->jabatan_id ? $pegawai->jabatan_id->nama_jabatan : '' }}</td>
+                <td>{{ $pegawai->jabatan ? $pegawai->jabatan->nama_jabatan : '' }}</td>
                 <td>
                     @if($pegawai->gambar)
                     <img src="{{ asset($pegawai->gambar) }}" alt="Gambar Pegawai" class="img-fluid" width="100">
-                    @else
-                    Tidak ada gambar
                     @endif
                 </td>
                 <td>
